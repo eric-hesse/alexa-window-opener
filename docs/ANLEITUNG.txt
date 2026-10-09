@@ -1,0 +1,85 @@
+FENSTEROEFFNER v2  -  Faulhaber 2232U009SR + Getriebe 14,7:1
+==============================================================
+
+DRUCKEN (alle Dateien liegen schon richtig herum)
+-------------------------------------------------
+Material: PETG (PLA nur zum Testen, wird in der Sonne weich)
+
+01_gehaeuse.stl        Rueckwand liegt auf dem Druckbett.
+                       0,2 mm Schicht, 4 Waende, 30 % Fuellung.
+                       Stuetzen: "nur ab Druckbett" (nur der kleine Haken vorne braucht welche).
+02_deckel.stl          Aussenseite auf dem Druckbett. Keine Stuetzen.
+03_ritzel_13z.stl      Zahnraeder: 0,12-0,16 mm Schicht, 100 % Fuellung, keine Stuetzen.
+04_abtriebsrad_22z.stl
+05_zwischenritzel_9z.stl
+06_zwischenrad_60z.stl (feine Zaehne - langsam drucken, ca. 30 mm/s)
+
+07_zahnstange_original.stl  Original-Zahnstange (Form unveraendert), nur
+                       flach hingelegt: Zahnseite liegt in der Druckebene.
+                       0,2 mm Schicht, 4 Waende, 40 % Fuellung, keine Stuetzen.
+                       Braucht ca. 10 x 14 cm Druckflaeche.
+
+ZUSAETZLICH NOETIG
+------------------
+- 3-mm-Stahlstift: 2 Stuecke a 25 mm (Ende entgraten)
+- 5x Schraube M3 x 12 (Senkkopf)              -> Deckel
+- 3x Holzschraube 4 mm Senkkopf + Duebel       -> an Rahmen/Wand
+- Sekundenkleber, doppelseitiges Klebeband
+- Bohrer 3,0 mm und 3,2 mm (nur falls etwas klemmt)
+
+ZUSAMMENBAU (Bild: vorschau_2_zusammenbau.png)
+----------------------------------------------
+REIHENFOLGE IST WICHTIG: erst Abtriebsrad, dann Motor, dann Zwischenrad.
+(Das Zwischenrad liegt UEBER den anderen beiden - kommt es zu frueh
+rein, passt nichts mehr darunter.)
+
+1. Ritzel (03) und Abtriebsrad (04) auf dem Sechskant zusammenstecken.
+   Zusammen von oben einlegen: Ritzel aussen vor der Vorderwand,
+   Nabe im Schlitz, Abtriebsrad innen.
+2. Stift von vorne durch die Ritzelmitte schieben, bis er in der
+   Zwischenwand sitzt (Sackloch). Ggf. leicht einklopfen.
+3. Motor von oben einlegen: Ritzel vor der Motorplatte (Welle im
+   Schlitz), Motor-Stirnseite liegt an der Platte an. Kabel nach hinten
+   durch die Kerbe ins Elektronikfach.
+4. Zwischenritzel (05) und Zwischenrad (06) zusammenstecken, von oben
+   einlegen: kleines Rad vorne, Hals im Schlitz der Zwischenwand,
+   grosses Rad hinten. Beim Absenken leicht hin und her drehen, bis
+   die Zaehne in Motorritzel und Abtriebsrad greifen.
+5. Zweiten Stift von vorne durch das Loch in der Vorderwand schieben,
+   durch beide Raeder bis in die Motorplatte.
+6. Von Hand am Ritzel drehen: Alles muss leicht laufen.
+   Dann Deckel drauf, 5x M3 eindrehen (schneiden sich ins Plastik).
+
+Wenn etwas klemmt:
+- Stift geht nicht ins Gehaeuse      -> Loch mit 3,0 mm aufbohren
+- Zahnrad dreht schwer auf dem Stift  -> Bohrung mit 3,2 mm aufbohren
+- Sechskant wackelt                   -> 1 Tropfen Sekundenkleber
+- Motor klappert                      -> Klebeband auf den Motor
+
+ELEKTRONIKFACH (innen 70 x 42 x 41 mm)  -> Bild vorschau_4_elektronik.png
+--------------
+ESP32-DevKit (38 Pins): mit der Bauteilseite nach hinten auf den
+Sockel kleben (doppelseitiges Schaumklebeband, ca. 1 mm), Stifte zeigen
+zu dir. USB-Buchse zur Endwand, genau vor das USB-Fenster schieben,
+dann erst festdruecken. Vorher Stecker einstecken und so ausrichten.
+Motortreiber DRV8833 spaeter hochkant an die Trennwand zum Motor kleben.
+Unten ist ein Reserveloch fuer einen spaeteren Sensor.
+
+MONTAGE
+-------
+Das Ritzel sitzt genau dort, wo beim Original das Ritzel sass
+(gleicher Abstand zur Rueckwand). Zahnstange also wie beim Original
+anbringen. 3 Wandschrauben, alle durch die grossen Loecher im Deckel: 2 ueber dem
+Motor, 1 unten im Elektronikfach. Der vordere Teil (ca. 4,5 cm inkl.
+Haken, siehe vorschau_5_ueberstand.png) darf wie beim Original ueber
+eine Kante ueberstehen. Schrauben fest anziehen, dann wackelt nichts. Die Loecher liegen anders als beim
+Original: Gehaeuse anhalten, anzeichnen, bohren. Das Geraet kann fertig
+zusammengebaut angeschraubt werden.
+
+TECHNISCHE DATEN
+----------------
+Uebersetzung 14,7:1 (60/10 x 22/9), Ritzel 13 Zaehne passend zur
+Zahnteilung 3,2 mm der Original-Zahnstange.
+Kraft an der Zahnstange ca. 18 N dauerhaft, ca. 20 N bei 1 A.
+Motorstrom nie ueber 1 A (Grenze des Flachkabels laut Faulhaber).
+Aussenmasse ca. 15,5 x 4,8 x 4,5 cm (inkl. Haken).
