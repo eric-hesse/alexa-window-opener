@@ -1,96 +1,100 @@
-FENSTEROEFFNER v3  -  Motor JGA25-370 (6 V, 35 U/min, Encoder) + TB6612 + ESP32 30 Pin USB-C
-=========================================================================================
-Kein Getriebe mehr zum Drucken: Das Ritzel sitzt direkt auf der Motorwelle.
-Haken und Zahnstange sind unveraendert vom Original (Zahnstange aus dem v2-Ordner nehmen).
+FENSTEROEFFNER v4  -  kompaktes Gehaeuse
+=========================================
+Motor JGA25-370 (6 V, 35 U/min, Encoder) direkt auf dem Ritzel,
+TB6612FNG, ESP32 DevKit 30 Pin USB-C, Stromschienen-Stueck.
+Haken und Zahnstange wie beim Original (Zahnstange aus dem v2-Ordner).
 
-DRUCKEN (Bambu P1S, Prusament ASA, Deckel vom Drucker zu lassen)
----------------------------------------------------------------
-01_gehaeuse_v3.stl      Rueckwand liegt auf dem Druckbett (Datei liegt schon richtig).
+Aussenmasse: 17,9 x 4,0 x 3,7 cm (mit Haken). Gleich hoch wie das Original,
+steht nur 3,7 cm von der Wand ab.
+
+Was neu ist gegenueber v3:
+- Elektronik liegt flach auf dem Boden, Stifte zeigen nach oben -> viel flacher
+- Runde Ecken, Deckel mit Falz (rutscht innen in die Wand, keine sichtbare Fuge)
+- Keine Schraubtuerme und keine Loecher fuer die Wandschrauben im Deckel:
+  Die 3 Wandschrauben sitzen oben in der Rueckwand und werden VOR dem Deckel
+  eingedreht. Von aussen sieht man nur die 5 kleinen Deckelschrauben.
+- USB-Kabel kommt hinten unten aus der Stirnseite.
+
+DRUCKEN (Bambu P1S, Prusament ASA, Druckerhaube zu)
+---------------------------------------------------
+01_gehaeuse_v4.stl      Rueckwand auf dem Druckbett (liegt schon richtig).
                         0,2 mm Schicht, 4 Waende, 25 % Fuellung, KEINE Stuetzen.
-                        Brim 5 mm (ASA verzieht sich bei langen Teilen gern).
-02_deckel_v3.stl        Aussenseite auf dem Druckbett. Keine Stuetzen. Brim 3 mm.
-03_ritzel_D4.stl        Ritzel, 0,12 mm Schicht, 100 % Fuellung, keine Stuetzen.
-03b_ritzel_D4_enger.stl Gleiches Ritzel mit etwas engerer Bohrung.
-                        BEIDE drucken (je 5 Minuten). Du nimmst das, das sich mit
-                        leichtem Druck auf die Welle schieben laesst (nicht wackelt,
-                        nicht mit dem Hammer).
+                        Brim 5 mm (ASA verzieht sich bei langen Teilen).
+02_deckel_v4.stl        Aussenseite auf dem Druckbett. Keine Stuetzen. Brim 3 mm.
+03_ritzel_D4.stl        0,12 mm Schicht, 100 % Fuellung, keine Stuetzen.
+03b_ritzel_D4_enger.stl gleiches Ritzel, Bohrung etwas enger. Beide drucken,
+                        das nehmen, das mit leichtem Druck auf die Welle geht.
 
-DAS BRAUCHST DU ZUSAETZLICH
----------------------------
-- 2x Schraube M3 x 6 (Zylinder- oder Linsenkopf)    -> Motor an die Frontplatte
-  WICHTIG: NICHT M3 x 10! Die Gewindeloecher im Motor sind nur 4,5 mm tief,
-  eine 10er-Schraube steht 8 mm in den Motor rein und blockiert ihn.
-- 6x Schraube M3 x 10                                -> Deckel
+DAS BRAUCHST DU
+---------------
+- 2x M3 x 6 (Zylinder- oder Linsenkopf)  -> Motor. NICHT laenger als 6 mm!
+  (oder 2 deiner M3 x 10 auf 6 mm kuerzen)
+- 5x M3 x 10                              -> Deckel
 - 3x Holzschraube 5 x 50 Senkkopf TX25 + 3x Duebel 6/40 -> Wand
-- tesa Powerbond (hast du), Sekundenkleber
-- Schraubendreher TX25 mit duenner Klinge (der Schacht im Gehaeuse ist 12 mm
-  breit, ein dicker Bithalter vom Akkuschrauber passt evtl. nicht)
+- tesa Powerbond, Sekundenkleber, Kabelbinder (optional)
+- Schraubendreher TX25 (der Schacht fuer den Schraubenkopf ist 10,5 mm breit)
 
-ZUSAMMENBAU  (Bilder: vorschau_1_innen.png, vorschau_2_motor_vorne.png)
------------------------------------------------------------------------
-0. Loecher anzeichnen und bohren, solange das Gehaeuse leer ist:
-   Gehaeuse an die Stelle halten, mit einem Bleistift durch die 3 grossen
-   Schaechte in die Loecher in der Rueckwand fahren, anzeichnen, 6-mm-Loecher
-   bohren, Duebel rein. (Abstaende zur Kontrolle: Loch 1 unten neben dem Motor,
-   Loch 2 und 3 am Ende uebereinander, 31 mm auseinander, 109,5 mm von Loch 1.)
-   Ritzel und Haken (vorne, bis knapp 1 cm hinter die Frontplatte) muessen
-   frei ueber die Kante ragen, dort laeuft die Zahnstange vorbei. Wie beim
-   Original.
+ZUSAMMENBAU (Bild vorschau_3_zusammenbau.png)
+---------------------------------------------
+1. Motor einlegen: von vorne (offene Seite) rein, die Welle rutscht durch den
+   Schlitz in der Frontplatte, die runde Getriebe-Stirnseite liegt flach an.
+   Die 2 Gewindeloecher muessen oben und unten hinter den Loechern der
+   Frontplatte sitzen. Zeigt das Motorkabel zur Rueckwand oder nach unten,
+   Motor halb herumdrehen (180 Grad) - dann zeigt es nach oben oder vorne.
 
-1. Motor von oben einlegen: Die Welle rutscht vorne durch den Schlitz in der
-   Frontplatte, die runde Stirnseite des Getriebes liegt flach an der Platte.
-   Motor so drehen, dass die zwei Gewindeloecher oben und unten hinter den zwei
-   Loechern in der Frontplatte sitzen. Zeigt dabei das Kabel zur Rueckwand,
-   den Motor einmal halb herum drehen (180 Grad), die Loecher passen dann trotzdem.
+2. 2x M3 x 6 von aussen durch die Frontplatte in den Motor. Fest, nicht brutal.
 
-2. Von vorne 2x M3 x 6 eindrehen, bis sie fest sind. Nicht mit Gewalt.
+3. Ritzel: erst trocken probieren (flache Seite der Welle an die flache Seite
+   der Bohrung). Dann EIN Tropfen Sekundenkleber hinten in die Bohrung,
+   aufschieben, dabei einen doppelt gefalteten Papierstreifen zwischen
+   Ritzel und Frontplatte klemmen. 10 Minuten trocknen, Papier raus.
 
-3. Ritzel aufkleben:
-   - Erst ohne Kleber probieren, welches Ritzel passt (flache Seite der Welle
-     an die flache Seite der Bohrung).
-   - Dann EINEN Tropfen Sekundenkleber hinten in die Bohrung (nicht an den
-     Rand, damit nichts ins Motorlager laeuft), aufschieben.
-   - Zwischen Ritzel und Frontplatte einen doppelt gefalteten Papierstreifen
-     als Abstandhalter klemmen, damit das Ritzel nicht an der Platte schleift.
-     10 Minuten trocknen lassen, Papier rausziehen.
+4. Elektronik - erst alle Kabel aufstecken, dann einkleben:
+   - TB6612: Chip-Seite nach UNTEN, Powerbond auf den Chip, in die flache
+     Mulde direkt hinter dem Motor (an der Rueckwand) druecken.
+   - Stromschiene: daneben, vorne an der offenen Seite (Powerbond).
+   - ESP32: Seite mit der Metallkappe nach UNTEN, Stifte zeigen nach oben,
+     USB-Buchse zur Stirnseite hinten. Powerbond auf die Metallkappe.
+     Zuerst das USB-Kabel einstecken und unten durch die Kerbe in der
+     Stirnseite fuehren. ESP an die Leiste an der Rueckwand und an die
+     Stirnwand schieben, dann auf den Sockel druecken.
+   - Kabelreste oben ueber dem ESP verstauen (dort ist Platz).
 
-4. Elektronik. Immer erst die Kabel auf die Stifte stecken, DANN einkleben,
-   sonst drueckst du die Platinen wieder ab.
-   - TB6612: Seite mit dem schwarzen Chip zur Rueckwand, Powerbond auf den
-     Chip, in den Rahmen oben neben dem Motor druecken.
-   - Stromschienen-Stueck darunter aufkleben (Freiflaeche unter dem Rahmen).
-   - ESP32: steht hochkant, USB-Buchse UNTEN. Seite mit der Metallkappe zur
-     Rueckwand, Powerbond auf die Metallkappe. Erst das USB-Kabel einstecken
-     und durch die Kerbe in der Unterseite fuehren, so hinschieben, dass die
-     Buchse genau ueber der Kerbe sitzt, dann auf den Sockel druecken.
-   - Kabel vom Motor ueber den Motor zur Elektronik legen, Reste im leeren
-     Platz neben dem ESP verstauen.
+5. An die Wand:
+   - Loecher anzeichnen: Gehaeuse an die Stelle halten, mit einem Bleistift
+     durch die 3 Loecher oben in der Rueckwand anzeichnen (vorher die Kabel
+     dort kurz zur Seite druecken). Abstand: Loch 1 bis Loch 2 = 47 mm,
+     Loch 2 bis Loch 3 = 43 mm, alle auf einer Linie 6,5 mm unter der
+     Oberkante.
+   - 6-mm-Loecher bohren, Duebel rein.
+   - Gehaeuse anhalten, die 3 Schrauben von vorne durch die Schaechte
+     eindrehen. Kabel, die im Weg sind, kurz zur Seite druecken.
+   - Wichtig (Bild vorschau_4_rueckseite.png): Ritzel und Haken muessen frei
+     ueber die Mauerkante ragen, weil die Zahnstange dort hinter der
+     Wandflaeche vorbeilaeuft. Die Mauerkante muss im blauen Bereich liegen:
+     zwischen der Frontplatte und ca. 2,4 cm dahinter. Das ist derselbe
+     Bereich wie beim Original.
 
-5. Gehaeuse an die Wand halten und die 3 Holzschrauben durch die Schaechte
-   eindrehen (der Motor ist da schon drin, das geht).
-
-6. Deckel drauf, 6x M3 x 10. Die Zunge am Deckel schliesst den Schlitz in der
-   Frontplatte, die zweite Zunge die USB-Kerbe bis zum Stecker.
+6. Deckel: hinten zuerst ansetzen, damit die Zunge in die USB-Kerbe rutscht,
+   dann vorne die Zunge in den Wellenschlitz, Deckel andruecken (der Falz
+   rutscht innen rein). 5x M3 x 10.
 
 7. Zahnstange wie beim Original zwischen Ritzel und Haken einsetzen.
 
 HINWEISE
 --------
-- Der BOOT-Knopf am ESP zeigt zur Rueckwand und ist im Gehaeuse nicht
-  erreichbar. Brauchst du auch nicht: Updates gehen ueber fenster.local/update,
-  WLAN-Reset kommt als Knopf auf die Webseite (naechste Firmware).
-- VORLAEUFIG: Die Masse von Motor und ESP stammen aus der Zeichnung bzw. aus
-  typischen Werten (ESP 51,5 x 28,3 mm). Wenn die Teile da sind, kurz
-  nachmessen: Lochabstand an der Motorstirn (17 mm?), Wellenlaenge (12 mm?),
-  ESP Laenge x Breite. Weicht etwas ab, passe ich die Datei an, bevor du druckst.
-- Kraft: Der Motor schafft am Ritzel deutlich mehr als dein Fenster braucht.
-  Die Firmware begrenzt deshalb die Leistung und stoppt, wenn der Motor
-  blockiert, sonst brechen die Zaehne der Zahnstange.
+- BOOT-Knopf am ESP zeigt nach unten und ist nicht erreichbar - brauchst du
+  nicht: Updates ueber fenster.local/update, WLAN-Reset kommt auf die Webseite.
+- Stromschiene: Platz dafuer ist 20 x 10 mm. Ist dein Stueck breiter als
+  10 mm, sag Bescheid.
+- Der Motor ist staerker als noetig. Die Firmware begrenzt die Kraft und
+  stoppt bei Blockade, sonst brechen Zaehne.
+- Bevor du druckst: Motor nachmessen, wenn er da ist (Lochabstand vorne 17 mm,
+  Welle ca. 12 mm, Getriebe 25 mm). Weicht etwas ab, passe ich die Datei an.
 
 TECHNISCHE DATEN
 ----------------
-Ritzel 13 Zaehne passend zur Original-Zahnstange (Teilung 3,2 mm), sitzt an
-derselben Stelle wie beim Original.
-Am USB-Netzteil (ca. 4,7 V am Motor) ca. 27 U/min = ca. 19 mm/s an der
-Zahnstange, 15 cm Weg also ca. 8 Sekunden.
-Aussenmasse ca. 17,5 x 5,5 x 4,8 cm (mit Haken).
+Ritzel 13 Zaehne passend zur Original-Zahnstange (Teilung 3,2 mm), gleiche
+Position wie beim Original. Ca. 19 mm/s an der Zahnstange (bei 5 V aus USB),
+15 cm Weg in ca. 8 Sekunden.
+Wandabstand der Ritzelachse 14 mm wie beim Original.
