@@ -1,85 +1,96 @@
-FENSTEROEFFNER v2  -  Faulhaber 2232U009SR + Getriebe 14,7:1
-==============================================================
+FENSTEROEFFNER v3  -  Motor JGA25-370 (6 V, 35 U/min, Encoder) + TB6612 + ESP32 30 Pin USB-C
+=========================================================================================
+Kein Getriebe mehr zum Drucken: Das Ritzel sitzt direkt auf der Motorwelle.
+Haken und Zahnstange sind unveraendert vom Original (Zahnstange aus dem v2-Ordner nehmen).
 
-DRUCKEN (alle Dateien liegen schon richtig herum)
--------------------------------------------------
-Material: PETG (PLA nur zum Testen, wird in der Sonne weich)
+DRUCKEN (Bambu P1S, Prusament ASA, Deckel vom Drucker zu lassen)
+---------------------------------------------------------------
+01_gehaeuse_v3.stl      Rueckwand liegt auf dem Druckbett (Datei liegt schon richtig).
+                        0,2 mm Schicht, 4 Waende, 25 % Fuellung, KEINE Stuetzen.
+                        Brim 5 mm (ASA verzieht sich bei langen Teilen gern).
+02_deckel_v3.stl        Aussenseite auf dem Druckbett. Keine Stuetzen. Brim 3 mm.
+03_ritzel_D4.stl        Ritzel, 0,12 mm Schicht, 100 % Fuellung, keine Stuetzen.
+03b_ritzel_D4_enger.stl Gleiches Ritzel mit etwas engerer Bohrung.
+                        BEIDE drucken (je 5 Minuten). Du nimmst das, das sich mit
+                        leichtem Druck auf die Welle schieben laesst (nicht wackelt,
+                        nicht mit dem Hammer).
 
-01_gehaeuse.stl        Rueckwand liegt auf dem Druckbett.
-                       0,2 mm Schicht, 4 Waende, 30 % Fuellung.
-                       Stuetzen: "nur ab Druckbett" (nur der kleine Haken vorne braucht welche).
-02_deckel.stl          Aussenseite auf dem Druckbett. Keine Stuetzen.
-03_ritzel_13z.stl      Zahnraeder: 0,12-0,16 mm Schicht, 100 % Fuellung, keine Stuetzen.
-04_abtriebsrad_22z.stl
-05_zwischenritzel_9z.stl
-06_zwischenrad_60z.stl (feine Zaehne - langsam drucken, ca. 30 mm/s)
+DAS BRAUCHST DU ZUSAETZLICH
+---------------------------
+- 2x Schraube M3 x 6 (Zylinder- oder Linsenkopf)    -> Motor an die Frontplatte
+  WICHTIG: NICHT M3 x 10! Die Gewindeloecher im Motor sind nur 4,5 mm tief,
+  eine 10er-Schraube steht 8 mm in den Motor rein und blockiert ihn.
+- 6x Schraube M3 x 10                                -> Deckel
+- 3x Holzschraube 5 x 50 Senkkopf TX25 + 3x Duebel 6/40 -> Wand
+- tesa Powerbond (hast du), Sekundenkleber
+- Schraubendreher TX25 mit duenner Klinge (der Schacht im Gehaeuse ist 12 mm
+  breit, ein dicker Bithalter vom Akkuschrauber passt evtl. nicht)
 
-07_zahnstange_original.stl  Original-Zahnstange (Form unveraendert), nur
-                       flach hingelegt: Zahnseite liegt in der Druckebene.
-                       0,2 mm Schicht, 4 Waende, 40 % Fuellung, keine Stuetzen.
-                       Braucht ca. 10 x 14 cm Druckflaeche.
+ZUSAMMENBAU  (Bilder: vorschau_1_innen.png, vorschau_2_motor_vorne.png)
+-----------------------------------------------------------------------
+0. Loecher anzeichnen und bohren, solange das Gehaeuse leer ist:
+   Gehaeuse an die Stelle halten, mit einem Bleistift durch die 3 grossen
+   Schaechte in die Loecher in der Rueckwand fahren, anzeichnen, 6-mm-Loecher
+   bohren, Duebel rein. (Abstaende zur Kontrolle: Loch 1 unten neben dem Motor,
+   Loch 2 und 3 am Ende uebereinander, 31 mm auseinander, 109,5 mm von Loch 1.)
+   Ritzel und Haken (vorne, bis knapp 1 cm hinter die Frontplatte) muessen
+   frei ueber die Kante ragen, dort laeuft die Zahnstange vorbei. Wie beim
+   Original.
 
-ZUSAETZLICH NOETIG
-------------------
-- 3-mm-Stahlstift: 2 Stuecke a 25 mm (Ende entgraten)
-- 5x Schraube M3 x 12 (Senkkopf)              -> Deckel
-- 3x Holzschraube 4 mm Senkkopf + Duebel       -> an Rahmen/Wand
-- Sekundenkleber, doppelseitiges Klebeband
-- Bohrer 3,0 mm und 3,2 mm (nur falls etwas klemmt)
+1. Motor von oben einlegen: Die Welle rutscht vorne durch den Schlitz in der
+   Frontplatte, die runde Stirnseite des Getriebes liegt flach an der Platte.
+   Motor so drehen, dass die zwei Gewindeloecher oben und unten hinter den zwei
+   Loechern in der Frontplatte sitzen. Zeigt dabei das Kabel zur Rueckwand,
+   den Motor einmal halb herum drehen (180 Grad), die Loecher passen dann trotzdem.
 
-ZUSAMMENBAU (Bild: vorschau_2_zusammenbau.png)
-----------------------------------------------
-REIHENFOLGE IST WICHTIG: erst Abtriebsrad, dann Motor, dann Zwischenrad.
-(Das Zwischenrad liegt UEBER den anderen beiden - kommt es zu frueh
-rein, passt nichts mehr darunter.)
+2. Von vorne 2x M3 x 6 eindrehen, bis sie fest sind. Nicht mit Gewalt.
 
-1. Ritzel (03) und Abtriebsrad (04) auf dem Sechskant zusammenstecken.
-   Zusammen von oben einlegen: Ritzel aussen vor der Vorderwand,
-   Nabe im Schlitz, Abtriebsrad innen.
-2. Stift von vorne durch die Ritzelmitte schieben, bis er in der
-   Zwischenwand sitzt (Sackloch). Ggf. leicht einklopfen.
-3. Motor von oben einlegen: Ritzel vor der Motorplatte (Welle im
-   Schlitz), Motor-Stirnseite liegt an der Platte an. Kabel nach hinten
-   durch die Kerbe ins Elektronikfach.
-4. Zwischenritzel (05) und Zwischenrad (06) zusammenstecken, von oben
-   einlegen: kleines Rad vorne, Hals im Schlitz der Zwischenwand,
-   grosses Rad hinten. Beim Absenken leicht hin und her drehen, bis
-   die Zaehne in Motorritzel und Abtriebsrad greifen.
-5. Zweiten Stift von vorne durch das Loch in der Vorderwand schieben,
-   durch beide Raeder bis in die Motorplatte.
-6. Von Hand am Ritzel drehen: Alles muss leicht laufen.
-   Dann Deckel drauf, 5x M3 eindrehen (schneiden sich ins Plastik).
+3. Ritzel aufkleben:
+   - Erst ohne Kleber probieren, welches Ritzel passt (flache Seite der Welle
+     an die flache Seite der Bohrung).
+   - Dann EINEN Tropfen Sekundenkleber hinten in die Bohrung (nicht an den
+     Rand, damit nichts ins Motorlager laeuft), aufschieben.
+   - Zwischen Ritzel und Frontplatte einen doppelt gefalteten Papierstreifen
+     als Abstandhalter klemmen, damit das Ritzel nicht an der Platte schleift.
+     10 Minuten trocknen lassen, Papier rausziehen.
 
-Wenn etwas klemmt:
-- Stift geht nicht ins Gehaeuse      -> Loch mit 3,0 mm aufbohren
-- Zahnrad dreht schwer auf dem Stift  -> Bohrung mit 3,2 mm aufbohren
-- Sechskant wackelt                   -> 1 Tropfen Sekundenkleber
-- Motor klappert                      -> Klebeband auf den Motor
+4. Elektronik. Immer erst die Kabel auf die Stifte stecken, DANN einkleben,
+   sonst drueckst du die Platinen wieder ab.
+   - TB6612: Seite mit dem schwarzen Chip zur Rueckwand, Powerbond auf den
+     Chip, in den Rahmen oben neben dem Motor druecken.
+   - Stromschienen-Stueck darunter aufkleben (Freiflaeche unter dem Rahmen).
+   - ESP32: steht hochkant, USB-Buchse UNTEN. Seite mit der Metallkappe zur
+     Rueckwand, Powerbond auf die Metallkappe. Erst das USB-Kabel einstecken
+     und durch die Kerbe in der Unterseite fuehren, so hinschieben, dass die
+     Buchse genau ueber der Kerbe sitzt, dann auf den Sockel druecken.
+   - Kabel vom Motor ueber den Motor zur Elektronik legen, Reste im leeren
+     Platz neben dem ESP verstauen.
 
-ELEKTRONIKFACH (innen 70 x 42 x 41 mm)  -> Bild vorschau_4_elektronik.png
---------------
-ESP32-DevKit (38 Pins): mit der Bauteilseite nach hinten auf den
-Sockel kleben (doppelseitiges Schaumklebeband, ca. 1 mm), Stifte zeigen
-zu dir. USB-Buchse zur Endwand, genau vor das USB-Fenster schieben,
-dann erst festdruecken. Vorher Stecker einstecken und so ausrichten.
-Motortreiber DRV8833 spaeter hochkant an die Trennwand zum Motor kleben.
-Unten ist ein Reserveloch fuer einen spaeteren Sensor.
+5. Gehaeuse an die Wand halten und die 3 Holzschrauben durch die Schaechte
+   eindrehen (der Motor ist da schon drin, das geht).
 
-MONTAGE
--------
-Das Ritzel sitzt genau dort, wo beim Original das Ritzel sass
-(gleicher Abstand zur Rueckwand). Zahnstange also wie beim Original
-anbringen. 3 Wandschrauben, alle durch die grossen Loecher im Deckel: 2 ueber dem
-Motor, 1 unten im Elektronikfach. Der vordere Teil (ca. 4,5 cm inkl.
-Haken, siehe vorschau_5_ueberstand.png) darf wie beim Original ueber
-eine Kante ueberstehen. Schrauben fest anziehen, dann wackelt nichts. Die Loecher liegen anders als beim
-Original: Gehaeuse anhalten, anzeichnen, bohren. Das Geraet kann fertig
-zusammengebaut angeschraubt werden.
+6. Deckel drauf, 6x M3 x 10. Die Zunge am Deckel schliesst den Schlitz in der
+   Frontplatte, die zweite Zunge die USB-Kerbe bis zum Stecker.
+
+7. Zahnstange wie beim Original zwischen Ritzel und Haken einsetzen.
+
+HINWEISE
+--------
+- Der BOOT-Knopf am ESP zeigt zur Rueckwand und ist im Gehaeuse nicht
+  erreichbar. Brauchst du auch nicht: Updates gehen ueber fenster.local/update,
+  WLAN-Reset kommt als Knopf auf die Webseite (naechste Firmware).
+- VORLAEUFIG: Die Masse von Motor und ESP stammen aus der Zeichnung bzw. aus
+  typischen Werten (ESP 51,5 x 28,3 mm). Wenn die Teile da sind, kurz
+  nachmessen: Lochabstand an der Motorstirn (17 mm?), Wellenlaenge (12 mm?),
+  ESP Laenge x Breite. Weicht etwas ab, passe ich die Datei an, bevor du druckst.
+- Kraft: Der Motor schafft am Ritzel deutlich mehr als dein Fenster braucht.
+  Die Firmware begrenzt deshalb die Leistung und stoppt, wenn der Motor
+  blockiert, sonst brechen die Zaehne der Zahnstange.
 
 TECHNISCHE DATEN
 ----------------
-Uebersetzung 14,7:1 (60/10 x 22/9), Ritzel 13 Zaehne passend zur
-Zahnteilung 3,2 mm der Original-Zahnstange.
-Kraft an der Zahnstange ca. 18 N dauerhaft, ca. 20 N bei 1 A.
-Motorstrom nie ueber 1 A (Grenze des Flachkabels laut Faulhaber).
-Aussenmasse ca. 15,5 x 4,8 x 4,5 cm (inkl. Haken).
+Ritzel 13 Zaehne passend zur Original-Zahnstange (Teilung 3,2 mm), sitzt an
+derselben Stelle wie beim Original.
+Am USB-Netzteil (ca. 4,7 V am Motor) ca. 27 U/min = ca. 19 mm/s an der
+Zahnstange, 15 cm Weg also ca. 8 Sekunden.
+Aussenmasse ca. 17,5 x 5,5 x 4,8 cm (mit Haken).
