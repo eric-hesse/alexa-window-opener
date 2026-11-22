@@ -4,7 +4,7 @@ Voice-controlled opener for a tilt window ("Kippfenster"), built with an **ESP32
 
 > 🚧 **Work in progress.** Every design iteration is a commit, and the versions are tagged `v1` to `v4`.
 
-![v4 render](docs/images/v4_fertig.png)
+![Alexa Window Opener](docs/images/cover.png)
 
 ## 💡 Idea
 
