@@ -23,11 +23,19 @@
   .controls button { font:600 15px Inter,system-ui,sans-serif; border:0; border-radius:999px; padding:10px 20px; cursor:pointer;
                      background:transparent; color:var(--ink); }
   .controls button.active { background:var(--ink); color:#fff; }
-  .hint { position:absolute; bottom:92px; left:50%; transform:translateX(-50%); color:var(--muted); font-size:13px; z-index:2; white-space:nowrap; }
+  .versions { position:absolute; bottom:96px; left:50%; transform:translateX(-50%); z-index:2; display:flex; align-items:flex-start; }
+  .versions .line { position:absolute; top:11px; left:42px; right:42px; height:3px; background:var(--line); }
+  .versions button { position:relative; background:none; border:0; cursor:pointer; width:84px; padding:0; font:700 15px Inter,system-ui,sans-serif; color:var(--muted); }
+  .versions button i { display:block; width:22px; height:22px; margin:0 auto 6px; border-radius:50%; border:3px solid var(--acc); background:var(--bg); transition:transform .15s; }
+  .versions button:hover i { transform:scale(1.15); }
+  .versions button.active { color:var(--acc); } .versions button.active i { background:var(--acc); }
+  .caption { position:absolute; bottom:160px; left:50%; transform:translateX(-50%); z-index:2; text-align:center; width:min(560px,90vw); }
+  .caption b { display:block; font-size:17px; } .caption span { color:var(--muted); font-size:14px; }
+  .hint { display:none; position:absolute; bottom:92px; left:50%; transform:translateX(-50%); color:var(--muted); font-size:13px; z-index:2; white-space:nowrap; }
   footer { position:absolute; bottom:28px; right:32px; z-index:2; font-size:14px; }
   footer a { color:var(--muted); text-decoration:none; } footer a:hover { color:var(--acc); }
   .note { position:absolute; top:32px; right:32px; z-index:2; font-size:12px; color:var(--muted); max-width:240px; text-align:right; }
-  @media (max-width:1000px){ footer{bottom:auto;top:auto;position:absolute;left:50%;right:auto;transform:translateX(-50%);bottom:4px;white-space:nowrap} .controls{bottom:40px} .hint{bottom:100px} }
+  @media (max-width:1000px){ footer{bottom:auto;top:auto;position:absolute;left:50%;right:auto;transform:translateX(-50%);bottom:4px;white-space:nowrap} .controls{bottom:40px} .versions{bottom:104px} .caption{bottom:168px} }
   @media (max-width:700px){ .note{display:none} header{left:20px} }
 </style>
 </head>
@@ -36,15 +44,18 @@
   <h1>Alexa Window<br><span>Opener</span></h1>
   <p>Voice-controlled opener for a tilt window, built with an ESP32, a JGA25-370 gear motor and 3D-printed parts.</p>
 </header>
-<div class="note">v4 housing · the mounting hook from the original Cults3D model is not included.</div>
+<div class="note">Drag to rotate · scroll to zoom<br>The mounting hook of the original Cults3D model is replaced by a simplified guide.</div>
 
-<model-viewer id="mv" src="3d/fenster_open.glb?v=4" alt="3D model of the window opener"
+<model-viewer id="mv" src="3d/v4_open.glb?v=5" alt="3D model of the window opener"
   camera-controls touch-action="pan-y" auto-rotate auto-rotate-delay="3000" rotation-per-second="12deg"
   camera-orbit="200deg 62deg 105%" min-camera-orbit="auto auto 40%" interaction-prompt="none"
   shadow-intensity="0.9" shadow-softness="0.8" exposure="0.85" tone-mapping="agx" environment-image="neutral">
 </model-viewer>
 
-<div class="hint">Drag to rotate · scroll to zoom</div>
+<div class="caption" id="cap"><b></b><span></span></div>
+<div class="versions" id="vers"><div class="line"></div>
+  <button data-v="1"><i></i>v1</button><button data-v="2"><i></i>v2</button><button data-v="3"><i></i>v3</button><button data-v="4" class="active"><i></i>v4</button>
+</div>
 <div class="controls">
   <button id="bOpen" class="active">Inside</button>
   <button id="bClosed">Closed</button>
@@ -53,13 +64,27 @@
 
 <script>
   const mv = document.getElementById('mv'), bO = document.getElementById('bOpen'), bC = document.getElementById('bClosed');
-  function show(open) {
+  const cap = document.getElementById('cap');
+  const INFO = {
+    1: ['v1 · 8 Oct 2026', 'Faulhaber 2232U009SR with a printed gear train (about 14.7:1). Housing only – motor and gears are not modeled here.'],
+    2: ['v2 · 9 Oct 2026', 'Longer housing and revised lid. Housing only – motor and gears are not modeled here.'],
+    3: ['v3 · 13 Oct 2026', 'Switched to a JGA25-370 gear motor: the pinion sits directly on the shaft, no printed gearbox.'],
+    4: ['v4 · 13 Oct 2026', 'Compact housing, only 3.7 cm from the wall – electronics lie flat, rebated lid.']
+  };
+  let ver = 4, open = true;
+  function load() {
     const orbit = mv.getCameraOrbit();
-    mv.src = open ? '3d/fenster_open.glb?v=4' : '3d/fenster_closed.glb?v=4';
-    mv.addEventListener('load', () => { mv.cameraOrbit = `${orbit.theta}rad ${orbit.phi}rad ${orbit.radius}m`; }, { once:true });
+    mv.src = `3d/v${ver}_${open ? 'open' : 'closed'}.glb?v=5`;
+    mv.addEventListener('load', () => { mv.cameraOrbit = `${orbit.theta}rad ${orbit.phi}rad auto`; }, { once:true });
     bO.classList.toggle('active', open); bC.classList.toggle('active', !open);
+    document.querySelectorAll('#vers button').forEach(b => b.classList.toggle('active', +b.dataset.v === ver));
+    cap.querySelector('b').textContent = INFO[ver][0]; cap.querySelector('span').textContent = INFO[ver][1];
+    history.replaceState(null, '', '#v' + ver);
   }
-  bO.onclick = () => show(true); bC.onclick = () => show(false);
+  bO.onclick = () => { open = true; load(); }; bC.onclick = () => { open = false; load(); };
+  document.querySelectorAll('#vers button').forEach(b => b.onclick = () => { ver = +b.dataset.v; load(); });
+  const m = location.hash.match(/^#v([1-4])$/); if (m) ver = +m[1];
+  load();
 </script>
 </body>
 </html>

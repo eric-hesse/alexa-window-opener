@@ -6,7 +6,14 @@ Voice-controlled opener for a tilt window ("Kippfenster"), built with an **ESP32
 
 ![Alexa Window Opener](docs/images/cover.png)
 
-<p align="center"><a href="https://eric-hesse.github.io/alexa-window-opener/"><b>🧊 View the interactive 3D model</b></a></p>
+<p align="center">
+  <a href="https://github.com/eric-hesse/alexa-window-opener/releases/tag/v1"><img src="https://img.shields.io/badge/v1-Faulhaber_%2B_gear_train-ebe6dd?style=for-the-badge&labelColor=d6542c" alt="v1"></a>
+  <a href="https://github.com/eric-hesse/alexa-window-opener/releases/tag/v2"><img src="https://img.shields.io/badge/v2-revised_lid_%2B_firmware-ebe6dd?style=for-the-badge&labelColor=d6542c" alt="v2"></a>
+  <a href="https://github.com/eric-hesse/alexa-window-opener/releases/tag/v3"><img src="https://img.shields.io/badge/v3-JGA25--370_motor-ebe6dd?style=for-the-badge&labelColor=d6542c" alt="v3"></a>
+  <a href="https://github.com/eric-hesse/alexa-window-opener/releases/tag/v4"><img src="https://img.shields.io/badge/v4-compact_housing-181e2c?style=for-the-badge&labelColor=d6542c" alt="v4"></a>
+</p>
+
+<p align="center"><a href="https://eric-hesse.github.io/alexa-window-opener/"><b>🧊 View the interactive 3D model</b></a> &nbsp;·&nbsp; switch between v1–v4 right in the viewer</p>
 
 ## 💡 Idea
 
