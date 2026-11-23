@@ -27,7 +27,8 @@
   footer { position:absolute; bottom:28px; right:32px; z-index:2; font-size:14px; }
   footer a { color:var(--muted); text-decoration:none; } footer a:hover { color:var(--acc); }
   .note { position:absolute; top:32px; right:32px; z-index:2; font-size:12px; color:var(--muted); max-width:240px; text-align:right; }
-  @media (max-width:700px){ .note{display:none} footer{bottom:auto;top:28px;right:20px} header{left:20px} }
+  @media (max-width:1000px){ footer{bottom:auto;top:auto;position:absolute;left:50%;right:auto;transform:translateX(-50%);bottom:4px;white-space:nowrap} .controls{bottom:40px} .hint{bottom:100px} }
+  @media (max-width:700px){ .note{display:none} header{left:20px} }
 </style>
 </head>
 <body>
@@ -40,7 +41,7 @@
 <model-viewer id="mv" src="3d/fenster_open.glb" alt="3D model of the window opener"
   camera-controls touch-action="pan-y" auto-rotate auto-rotate-delay="3000" rotation-per-second="12deg"
   camera-orbit="200deg 62deg 105%" min-camera-orbit="auto auto 40%" interaction-prompt="none"
-  shadow-intensity="0.9" shadow-softness="0.8" exposure="1.05" environment-image="neutral">
+  shadow-intensity="0.9" shadow-softness="0.8" exposure="0.85" tone-mapping="agx" environment-image="neutral">
 </model-viewer>
 
 <div class="hint">Drag to rotate · scroll to zoom</div>
