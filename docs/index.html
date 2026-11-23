@@ -38,7 +38,7 @@
 </header>
 <div class="note">v4 housing · the mounting hook from the original Cults3D model is not included.</div>
 
-<model-viewer id="mv" src="3d/fenster_open.glb" alt="3D model of the window opener"
+<model-viewer id="mv" src="3d/fenster_open.glb?v=4" alt="3D model of the window opener"
   camera-controls touch-action="pan-y" auto-rotate auto-rotate-delay="3000" rotation-per-second="12deg"
   camera-orbit="200deg 62deg 105%" min-camera-orbit="auto auto 40%" interaction-prompt="none"
   shadow-intensity="0.9" shadow-softness="0.8" exposure="0.85" tone-mapping="agx" environment-image="neutral">
@@ -55,7 +55,7 @@
   const mv = document.getElementById('mv'), bO = document.getElementById('bOpen'), bC = document.getElementById('bClosed');
   function show(open) {
     const orbit = mv.getCameraOrbit();
-    mv.src = open ? '3d/fenster_open.glb' : '3d/fenster_closed.glb';
+    mv.src = open ? '3d/fenster_open.glb?v=4' : '3d/fenster_closed.glb?v=4';
     mv.addEventListener('load', () => { mv.cameraOrbit = `${orbit.theta}rad ${orbit.phi}rad ${orbit.radius}m`; }, { once:true });
     bO.classList.toggle('active', open); bC.classList.toggle('active', !open);
   }
