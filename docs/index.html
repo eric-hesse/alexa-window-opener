@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alexa Window Opener – 3D view</title>
+<meta name="description" content="Interactive 3D model of a voice-controlled tilt window opener (ESP32, gear motor, 3D-printed housing).">
+<meta property="og:image" content="https://raw.githubusercontent.com/eric-hesse/alexa-window-opener/main/docs/images/cover.png">
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#f5f2ec; --ink:#181e2c; --muted:#606876; --acc:#d6542c; --line:#c8c1b6; }
+  * { box-sizing:border-box; }
+  html,body { margin:0; height:100%; background:var(--bg); color:var(--ink); font-family:Inter,system-ui,sans-serif; }
+  header { position:absolute; top:28px; left:32px; z-index:2; pointer-events:none; }
+  h1 { margin:0; font-size:clamp(28px,4vw,46px); font-weight:800; letter-spacing:-0.02em; line-height:1.05; }
+  h1 span { color:var(--acc); }
+  header p { margin:10px 0 0; color:var(--muted); font-size:16px; max-width:420px; }
+  model-viewer { width:100%; height:100%; --poster-color:transparent; }
+  .controls { position:absolute; bottom:28px; left:50%; transform:translateX(-50%); display:flex; gap:10px; z-index:2;
+              background:#fffdf9; border:1px solid var(--line); border-radius:999px; padding:6px; box-shadow:0 6px 24px rgba(0,0,0,.08); }
+  .controls button { font:600 15px Inter,system-ui,sans-serif; border:0; border-radius:999px; padding:10px 20px; cursor:pointer;
+                     background:transparent; color:var(--ink); }
+  .controls button.active { background:var(--ink); color:#fff; }
+  .hint { position:absolute; bottom:92px; left:50%; transform:translateX(-50%); color:var(--muted); font-size:13px; z-index:2; white-space:nowrap; }
+  footer { position:absolute; bottom:28px; right:32px; z-index:2; font-size:14px; }
+  footer a { color:var(--muted); text-decoration:none; } footer a:hover { color:var(--acc); }
+  .note { position:absolute; top:32px; right:32px; z-index:2; font-size:12px; color:var(--muted); max-width:240px; text-align:right; }
+  @media (max-width:700px){ .note{display:none} footer{bottom:auto;top:28px;right:20px} header{left:20px} }
+</style>
+</head>
+<body>
+<header>
+  <h1>Alexa Window<br><span>Opener</span></h1>
+  <p>Voice-controlled opener for a tilt window, built with an ESP32, a JGA25-370 gear motor and 3D-printed parts.</p>
+</header>
+<div class="note">v4 housing · the mounting hook from the original Cults3D model is not included.</div>
+
+<model-viewer id="mv" src="3d/fenster_open.glb" alt="3D model of the window opener"
+  camera-controls touch-action="pan-y" auto-rotate auto-rotate-delay="3000" rotation-per-second="12deg"
+  camera-orbit="200deg 62deg 105%" min-camera-orbit="auto auto 40%" interaction-prompt="none"
+  shadow-intensity="0.9" shadow-softness="0.8" exposure="1.05" environment-image="neutral">
+</model-viewer>
+
+<div class="hint">Drag to rotate · scroll to zoom</div>
+<div class="controls">
+  <button id="bOpen" class="active">Inside</button>
+  <button id="bClosed">Closed</button>
+</div>
+<footer><a href="https://github.com/eric-hesse/alexa-window-opener">github.com/eric-hesse/alexa-window-opener</a></footer>
+
+<script>
+  const mv = document.getElementById('mv'), bO = document.getElementById('bOpen'), bC = document.getElementById('bClosed');
+  function show(open) {
+    const orbit = mv.getCameraOrbit();
+    mv.src = open ? '3d/fenster_open.glb' : '3d/fenster_closed.glb';
+    mv.addEventListener('load', () => { mv.cameraOrbit = `${orbit.theta}rad ${orbit.phi}rad ${orbit.radius}m`; }, { once:true });
+    bO.classList.toggle('active', open); bC.classList.toggle('active', !open);
+  }
+  bO.onclick = () => show(true); bC.onclick = () => show(false);
+</script>
+</body>
+</html>

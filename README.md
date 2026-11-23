@@ -6,6 +6,8 @@ Voice-controlled opener for a tilt window ("Kippfenster"), built with an **ESP32
 
 ![Alexa Window Opener](docs/images/cover.png)
 
+<p align="center"><a href="https://eric-hesse.github.io/alexa-window-opener/"><b>🧊 View the interactive 3D model</b></a></p>
+
 ## 💡 Idea
 
 A motor unit is mounted on the wall/frame and drives a rigid **rack** that tilts the window open and pulls it closed again. A rack can both push and pull, unlike a cable. Locking the window handle stays manual on purpose; the device only tilts.
@@ -52,8 +54,8 @@ The window must never hurt anyone or damage itself, so the device should:
 ## 📁 Repository structure
 
 ```
-cad/        my own printable parts (lid, pinion)
-docs/       print & assembly instructions (German) and renders for each version
+cad/        my own printable parts (lid, pinion) + assembly_v4.stl (opens in GitHub's 3D viewer)
+docs/       print & assembly instructions (German), renders, and the 3D viewer page (docs/index.html)
 firmware/   ESP32 code (PlatformIO, Arduino framework)
 scripts/    Python scripts that generate and check the parts
 ```
