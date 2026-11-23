@@ -73,9 +73,9 @@
   };
   let ver = 4, open = true;
   function load() {
-    const orbit = mv.getCameraOrbit();
+    const orbit = mv.loaded && mv.getCameraOrbit ? mv.getCameraOrbit() : null;
     mv.src = `3d/v${ver}_${open ? 'open' : 'closed'}.glb?v=5`;
-    mv.addEventListener('load', () => { mv.cameraOrbit = `${orbit.theta}rad ${orbit.phi}rad auto`; }, { once:true });
+    if (orbit) mv.addEventListener('load', () => { mv.cameraOrbit = `${orbit.theta}rad ${orbit.phi}rad auto`; }, { once:true });
     bO.classList.toggle('active', open); bC.classList.toggle('active', !open);
     document.querySelectorAll('#vers button').forEach(b => b.classList.toggle('active', +b.dataset.v === ver));
     cap.querySelector('b').textContent = INFO[ver][0]; cap.querySelector('span').textContent = INFO[ver][1];
@@ -84,7 +84,7 @@
   bO.onclick = () => { open = true; load(); }; bC.onclick = () => { open = false; load(); };
   document.querySelectorAll('#vers button').forEach(b => b.onclick = () => { ver = +b.dataset.v; load(); });
   const m = location.hash.match(/^#v([1-4])$/); if (m) ver = +m[1];
-  load();
+  customElements.whenDefined('model-viewer').then(load);
 </script>
 </body>
 </html>
