@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1260 700" width="1260" height="700" font-family="Inter,Segoe UI,Helvetica,Arial,sans-serif">
+<rect width="1260" height="700" rx="18" fill="#f5f2ec"/>
+<text x="40" y="52" font-size="26" font-weight="800" fill="#181e2c">Wiring <tspan fill="#d6542c">v4</tspan></text>
+<text x="40" y="78" font-size="14" fill="#606876">Planned pinout for the motor firmware – GPIOs can still change. Same coloured tag = same net.</text>
+<rect x="70" y="110" width="230" height="520" rx="12" fill="#fffdf9" stroke="#c8c1b6" stroke-width="2"/>
+<text x="185.0" y="138" text-anchor="middle" font-size="17" font-weight="700" fill="#181e2c">ESP32 DevKit</text>
+<text x="185.0" y="157" text-anchor="middle" font-size="12" fill="#606876">30 pin · USB-C</text>
+<circle cx="300" cy="170" r="4.5" fill="#181e2c"/>
+<text x="288" y="175" text-anchor="end" font-size="13" font-weight="600" fill="#181e2c">VIN (5 V)</text>
+<circle cx="300" cy="196" r="4.5" fill="#181e2c"/>
+<text x="288" y="201" text-anchor="end" font-size="13" font-weight="600" fill="#181e2c">GND</text>
+<circle cx="300" cy="222" r="4.5" fill="#181e2c"/>
+<text x="288" y="227" text-anchor="end" font-size="13" font-weight="600" fill="#181e2c">3V3</text>
+<circle cx="300" cy="270" r="4.5" fill="#181e2c"/>
+<text x="288" y="275" text-anchor="end" font-size="13" font-weight="600" fill="#181e2c">GPIO25</text>
+<circle cx="300" cy="300" r="4.5" fill="#181e2c"/>
+<text x="288" y="305" text-anchor="end" font-size="13" font-weight="600" fill="#181e2c">GPIO26</text>
+<circle cx="300" cy="330" r="4.5" fill="#181e2c"/>
+<text x="288" y="335" text-anchor="end" font-size="13" font-weight="600" fill="#181e2c">GPIO27</text>
+<circle cx="300" cy="360" r="4.5" fill="#181e2c"/>
+<text x="288" y="365" text-anchor="end" font-size="13" font-weight="600" fill="#181e2c">GPIO14</text>
+<circle cx="300" cy="420" r="4.5" fill="#181e2c"/>
+<text x="288" y="425" text-anchor="end" font-size="13" font-weight="600" fill="#181e2c">GPIO32</text>
+<circle cx="300" cy="450" r="4.5" fill="#181e2c"/>
+<text x="288" y="455" text-anchor="end" font-size="13" font-weight="600" fill="#181e2c">GPIO33</text>
+<circle cx="300" cy="510" r="4.5" fill="#181e2c"/>
+<text x="288" y="515" text-anchor="end" font-size="13" font-weight="600" fill="#181e2c">GPIO18</text>
+<circle cx="300" cy="560" r="4.5" fill="#181e2c"/>
+<text x="288" y="565" text-anchor="end" font-size="13" font-weight="600" fill="#181e2c">GPIO19</text>
+<line x1="300" y1="170" x2="314" y2="170" stroke="#d64545" stroke-width="3"/>
+<rect x="314" y="159" width="28" height="22" rx="11" fill="#d64545"/>
+<text x="328.0" y="175" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">5V</text>
+<line x1="300" y1="196" x2="314" y2="196" stroke="#2b2b2b" stroke-width="3"/>
+<rect x="314" y="185" width="36" height="22" rx="11" fill="#2b2b2b"/>
+<text x="332.0" y="201" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">GND</text>
+<line x1="300" y1="222" x2="314" y2="222" stroke="#d99a1e" stroke-width="3"/>
+<rect x="314" y="211" width="36" height="22" rx="11" fill="#d99a1e"/>
+<text x="332.0" y="227" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">3V3</text>
+<path d="M20 380 H66" stroke="#181e2c" stroke-width="5" stroke-linecap="round"/><text x="22" y="368" font-size="12" fill="#606876">USB-C</text><text x="22" y="404" font-size="12" fill="#606876">5 V / 2 A</text>
+<rect x="430" y="96" width="250" height="86" rx="12" fill="#fffdf9" stroke="#c8c1b6" stroke-width="2"/>
+<text x="555.0" y="124" text-anchor="middle" font-size="17" font-weight="700" fill="#181e2c">Power rail</text>
+<text x="555" y="150" text-anchor="middle" font-size="12" fill="#606876">all 5V and all GND tags</text><text x="555" y="166" text-anchor="middle" font-size="12" fill="#606876">are joined here</text>
+<rect x="560" y="200" width="200" height="214" rx="12" fill="#fffdf9" stroke="#c8c1b6" stroke-width="2"/>
+<text x="660.0" y="228" text-anchor="middle" font-size="17" font-weight="700" fill="#181e2c">TB6612FNG</text>
+<text x="660.0" y="247" text-anchor="middle" font-size="12" fill="#606876">motor driver</text>
+<circle cx="560" cy="270" r="4.5" fill="#181e2c"/>
+<text x="572" y="275" text-anchor="start" font-size="13" font-weight="600" fill="#181e2c">PWMA</text>
+<circle cx="560" cy="300" r="4.5" fill="#181e2c"/>
+<text x="572" y="305" text-anchor="start" font-size="13" font-weight="600" fill="#181e2c">AIN1</text>
+<circle cx="560" cy="330" r="4.5" fill="#181e2c"/>
+<text x="572" y="335" text-anchor="start" font-size="13" font-weight="600" fill="#181e2c">AIN2</text>
+<circle cx="560" cy="360" r="4.5" fill="#181e2c"/>
+<text x="572" y="365" text-anchor="start" font-size="13" font-weight="600" fill="#181e2c">STBY</text>
+<circle cx="760" cy="300" r="4.5" fill="#181e2c"/>
+<text x="748" y="305" text-anchor="end" font-size="13" font-weight="600" fill="#181e2c">AO1</text>
+<circle cx="760" cy="330" r="4.5" fill="#181e2c"/>
+<text x="748" y="335" text-anchor="end" font-size="13" font-weight="600" fill="#181e2c">AO2</text>
+<circle cx="760" cy="360" r="4.5" fill="#181e2c"/>
+<text x="748" y="365" text-anchor="end" font-size="13" font-weight="600" fill="#181e2c">VM</text>
+<line x1="760" y1="360" x2="774" y2="360" stroke="#d64545" stroke-width="3"/>
+<rect x="774" y="349" width="28" height="22" rx="11" fill="#d64545"/>
+<text x="788.0" y="365" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">5V</text>
+<circle cx="760" cy="384" r="4.5" fill="#181e2c"/>
+<text x="748" y="389" text-anchor="end" font-size="13" font-weight="600" fill="#181e2c">VCC</text>
+<line x1="760" y1="384" x2="774" y2="384" stroke="#d99a1e" stroke-width="3"/>
+<rect x="774" y="373" width="36" height="22" rx="11" fill="#d99a1e"/>
+<text x="792.0" y="389" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">3V3</text>
+<circle cx="760" cy="408" r="4.5" fill="#181e2c"/>
+<text x="748" y="413" text-anchor="end" font-size="13" font-weight="600" fill="#181e2c">GND</text>
+<line x1="760" y1="408" x2="774" y2="408" stroke="#2b2b2b" stroke-width="3"/>
+<rect x="774" y="397" width="36" height="22" rx="11" fill="#2b2b2b"/>
+<text x="792.0" y="413" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">GND</text>
+<line x1="304" y1="270" x2="556" y2="270" stroke="#2f6fb0" stroke-width="3" stroke-linecap="round"/>
+<line x1="304" y1="300" x2="556" y2="300" stroke="#2f6fb0" stroke-width="3" stroke-linecap="round"/>
+<line x1="304" y1="330" x2="556" y2="330" stroke="#2f6fb0" stroke-width="3" stroke-linecap="round"/>
+<line x1="304" y1="360" x2="556" y2="360" stroke="#2f6fb0" stroke-width="3" stroke-linecap="round"/>
+<rect x="940" y="236" width="220" height="240" rx="12" fill="#fffdf9" stroke="#c8c1b6" stroke-width="2"/>
+<text x="1050.0" y="264" text-anchor="middle" font-size="17" font-weight="700" fill="#181e2c">JGA25-370</text>
+<text x="1050.0" y="283" text-anchor="middle" font-size="12" fill="#606876">gear motor + encoder</text>
+<circle cx="940" cy="300" r="4.5" fill="#181e2c"/>
+<text x="952" y="305" text-anchor="start" font-size="13" font-weight="600" fill="#181e2c">M1</text>
+<circle cx="940" cy="330" r="4.5" fill="#181e2c"/>
+<text x="952" y="335" text-anchor="start" font-size="13" font-weight="600" fill="#181e2c">M2</text>
+<circle cx="940" cy="420" r="4.5" fill="#181e2c"/>
+<text x="952" y="425" text-anchor="start" font-size="13" font-weight="600" fill="#181e2c">C1 (A)</text>
+<circle cx="940" cy="450" r="4.5" fill="#181e2c"/>
+<text x="952" y="455" text-anchor="start" font-size="13" font-weight="600" fill="#181e2c">C2 (B)</text>
+<circle cx="1160" cy="300" r="4.5" fill="#181e2c"/>
+<text x="1148" y="305" text-anchor="end" font-size="13" font-weight="600" fill="#181e2c">VCC</text>
+<line x1="1160" y1="300" x2="1174" y2="300" stroke="#d99a1e" stroke-width="3"/>
+<rect x="1174" y="289" width="36" height="22" rx="11" fill="#d99a1e"/>
+<text x="1192.0" y="305" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">3V3</text>
+<circle cx="1160" cy="330" r="4.5" fill="#181e2c"/>
+<text x="1148" y="335" text-anchor="end" font-size="13" font-weight="600" fill="#181e2c">GND</text>
+<line x1="1160" y1="330" x2="1174" y2="330" stroke="#2b2b2b" stroke-width="3"/>
+<rect x="1174" y="319" width="36" height="22" rx="11" fill="#2b2b2b"/>
+<text x="1192.0" y="335" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">GND</text>
+<line x1="764" y1="300" x2="860" y2="300" stroke="#8b2e2e" stroke-width="4" stroke-linecap="round"/>
+<line x1="860" y1="300" x2="936" y2="300" stroke="#8b2e2e" stroke-width="4" stroke-linecap="round"/>
+<line x1="764" y1="330" x2="936" y2="330" stroke="#8b2e2e" stroke-width="4" stroke-linecap="round"/>
+<line x1="304" y1="420" x2="936" y2="420" stroke="#2f9e6b" stroke-width="3" stroke-linecap="round"/>
+<line x1="304" y1="450" x2="936" y2="450" stroke="#2f9e6b" stroke-width="3" stroke-linecap="round"/>
+<rect x="940" y="488" width="220" height="62" rx="12" fill="#fffdf9" stroke="#c8c1b6" stroke-width="2"/>
+<text x="1050.0" y="516" text-anchor="middle" font-size="17" font-weight="700" fill="#181e2c">Hall sensor</text>
+<text x="1050.0" y="535" text-anchor="middle" font-size="12" fill="#606876">end stop · open</text>
+<rect x="940" y="560" width="220" height="62" rx="12" fill="#fffdf9" stroke="#c8c1b6" stroke-width="2"/>
+<text x="1050.0" y="588" text-anchor="middle" font-size="17" font-weight="700" fill="#181e2c">Hall sensor</text>
+<text x="1050.0" y="607" text-anchor="middle" font-size="12" fill="#606876">end stop · closed</text>
+<circle cx="940" cy="510" r="4.5" fill="#181e2c"/>
+<text x="952" y="515" text-anchor="start" font-size="13" font-weight="600" fill="#181e2c">OUT</text>
+<circle cx="940" cy="582" r="4.5" fill="#181e2c"/>
+<text x="952" y="587" text-anchor="start" font-size="13" font-weight="600" fill="#181e2c">OUT</text>
+<line x1="304" y1="510" x2="936" y2="510" stroke="#7a5bc0" stroke-width="3" stroke-linecap="round"/>
+<line x1="304" y1="560" x2="900" y2="560" stroke="#7a5bc0" stroke-width="3" stroke-linecap="round"/>
+<line x1="900" y1="560" x2="900" y2="582" stroke="#7a5bc0" stroke-width="3" stroke-linecap="round"/>
+<line x1="900" y1="582" x2="936" y2="582" stroke="#7a5bc0" stroke-width="3" stroke-linecap="round"/>
+<text x="1150" y="519" text-anchor="end" font-size="11" fill="#606876"></text>
+<text x="1150" y="591" text-anchor="end" font-size="11" fill="#606876"></text>
+<circle cx="1160" cy="502" r="4.5" fill="#181e2c"/>
+<text x="1148" y="507" text-anchor="end" font-size="13" font-weight="600" fill="#181e2c">VCC</text>
+<line x1="1160" y1="502" x2="1174" y2="502" stroke="#d99a1e" stroke-width="3"/>
+<rect x="1174" y="491" width="36" height="22" rx="11" fill="#d99a1e"/>
+<text x="1192.0" y="507" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">3V3</text>
+<circle cx="1160" cy="522" r="4.5" fill="#181e2c"/>
+<text x="1148" y="527" text-anchor="end" font-size="13" font-weight="600" fill="#181e2c">GND</text>
+<line x1="1160" y1="522" x2="1174" y2="522" stroke="#2b2b2b" stroke-width="3"/>
+<rect x="1174" y="511" width="36" height="22" rx="11" fill="#2b2b2b"/>
+<text x="1192.0" y="527" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">GND</text>
+<circle cx="1160" cy="574" r="4.5" fill="#181e2c"/>
+<text x="1148" y="579" text-anchor="end" font-size="13" font-weight="600" fill="#181e2c">VCC</text>
+<line x1="1160" y1="574" x2="1174" y2="574" stroke="#d99a1e" stroke-width="3"/>
+<rect x="1174" y="563" width="36" height="22" rx="11" fill="#d99a1e"/>
+<text x="1192.0" y="579" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">3V3</text>
+<circle cx="1160" cy="594" r="4.5" fill="#181e2c"/>
+<text x="1148" y="599" text-anchor="end" font-size="13" font-weight="600" fill="#181e2c">GND</text>
+<line x1="1160" y1="594" x2="1174" y2="594" stroke="#2b2b2b" stroke-width="3"/>
+<rect x="1174" y="583" width="36" height="22" rx="11" fill="#2b2b2b"/>
+<text x="1192.0" y="599" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">GND</text>
+<rect x="70" y="652" width="26" height="8" rx="4" fill="#d64545"/><text x="104" y="662" font-size="13" fill="#181e2c">5 V</text>
+<rect x="220" y="652" width="26" height="8" rx="4" fill="#d99a1e"/><text x="254" y="662" font-size="13" fill="#181e2c">3.3 V</text>
+<rect x="370" y="652" width="26" height="8" rx="4" fill="#2b2b2b"/><text x="404" y="662" font-size="13" fill="#181e2c">GND</text>
+<rect x="520" y="652" width="26" height="8" rx="4" fill="#2f6fb0"/><text x="554" y="662" font-size="13" fill="#181e2c">motor driver</text>
+<rect x="670" y="652" width="26" height="8" rx="4" fill="#8b2e2e"/><text x="704" y="662" font-size="13" fill="#181e2c">motor power</text>
+<rect x="820" y="652" width="26" height="8" rx="4" fill="#2f9e6b"/><text x="854" y="662" font-size="13" fill="#181e2c">encoder</text>
+<rect x="970" y="652" width="26" height="8" rx="4" fill="#7a5bc0"/><text x="1004" y="662" font-size="13" fill="#181e2c">end stops</text>
+<text x="1220" y="52" text-anchor="end" font-size="12" fill="#606876">Motor runs on 5 V from USB · use a 2 A power supply</text>
+</svg>

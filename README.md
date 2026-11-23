@@ -1,5 +1,9 @@
 # 🪟 Alexa Window Opener
 
+[![Firmware build](https://github.com/eric-hesse/alexa-window-opener/actions/workflows/firmware.yml/badge.svg)](https://github.com/eric-hesse/alexa-window-opener/actions/workflows/firmware.yml)
+[![Code: MIT](https://img.shields.io/badge/code-MIT-181e2c)](LICENSE)
+[![CAD: CC BY-NC 4.0](https://img.shields.io/badge/CAD-CC_BY--NC_4.0-d6542c)](LICENSE-CAD.md)
+
 Voice-controlled opener for a tilt window ("Kippfenster"), built with an **ESP32**, a **DC gear motor with encoder** and **3D-printed parts**.
 
 > 🚧 **Work in progress.** Every design iteration is a commit, and the versions are tagged `v1` to `v4`.
@@ -40,6 +44,16 @@ Goal: *"Alexa, open the window."*
 | End stops | Magnets + Hall sensor |
 | Printed parts | Housing, lid, pinion, printed on a Bambu Lab P1S in Prusament ASA |
 
+## 🔌 Wiring
+
+![Wiring diagram](docs/wiring.svg)
+
+Planned pin assignment for the motor firmware; GPIOs can still change.
+
+## 📖 Build guide
+
+Printing, parts list and step-by-step assembly for v4: **[English](docs/ASSEMBLY.md)** · **[Deutsch](docs/ANLEITUNG.md)**
+
 ## 🛡️ Safety (planned)
 
 The window must never hurt anyone or damage itself, so the device should:
@@ -62,11 +76,14 @@ The window must never hurt anyone or damage itself, so the device should:
 
 ```
 cad/        my own printable parts (lid, pinion) + assembly_v4.stl (opens in GitHub's 3D viewer)
-docs/       print & assembly instructions (German), renders, and the 3D viewer page (docs/index.html)
+docs/       build guide (EN/DE), wiring diagram, renders and the 3D viewer page (docs/index.html)
 firmware/   ESP32 code (PlatformIO, Arduino framework)
 scripts/    Python scripts that generate and check the parts
+.github/    GitHub Actions: builds the ESP32 firmware on every push
 ```
 
-## 🙏 Credits & license note
+## 🙏 Credits & license
 
 The mechanical concept (hook and rack) comes from the model **["Automatic window open/close er"](https://cults3d.com/de/modell-3d/werkzeuge/automatic-window-open-close-er) by hajnyondra** on Cults3D. That model is published under the *Cults Private Use* license, so its files and the housing parts that contain its geometry are **not** included in this repository. Get the original from the author if you want to build this. The generator scripts expect the original files locally.
+
+My own code (`firmware/`, `scripts/`) is released under the [MIT License](LICENSE). My 3D models, renders and docs are released under [CC BY-NC 4.0](LICENSE-CAD.md): free to share and remix for non-commercial use with credit.
